@@ -68,10 +68,12 @@ export const Projects = () => {
       }
     )
       .then(res => res.json())
+
+
       .then(data => {
-        const filteredRepos = data
-          .filter(repo => !repo.fork)
-          .slice(0, 6)
+        const filteredRepos = data.filter(
+  repo => repo.name === 'mealkit-fullstack-platform'
+)
 
         setRepos(filteredRepos)
         setLoading(false)
